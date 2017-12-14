@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+
+using System.Text;
+
+namespace Toyo.Core
+{
+    public class OfficeAccessoriesStockInDetailBUS
+    {
+        Base b = new Base();
+        OfficeAccessoriesStockInDetailDAO dao = new OfficeAccessoriesStockInDetailDAO();
+        public int Create(OfficeAccessoriesStockInDetailVO vo)
+        {
+            int id;
+            if (!dao.isExist(vo.Id.ToString()))
+            {
+                id = dao.Insert(vo);
+            }
+            else
+            {
+                id = dao.Update(vo);
+            }
+            return id;
+        }
+    }
+}

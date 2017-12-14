@@ -1,0 +1,36 @@
+C:\Users\jinny\Desktop\Excel Import (Employee from sample)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.csproj.ResolveComReference.cache
+C:\Users\jinny\Desktop\Excel Import (Employee from sample)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Form1.resources
+C:\Users\jinny\Desktop\Excel Import (Employee from sample)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Form2.resources
+C:\Users\jinny\Desktop\Excel Import (Employee from sample)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Form3.resources
+C:\Users\jinny\Desktop\Excel Import (Employee from sample)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Properties.Resources.resources
+C:\Users\jinny\Desktop\Excel Import (Employee from sample)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.csproj.GenerateResource.Cache
+C:\Users\jinny\Desktop\Excel Import (Employee from sample)\ToImportExcelForPTIC\bin\Debug\ToImportExcelForPTIC.exe.config
+C:\Users\jinny\Desktop\Excel Import (Employee from sample)\ToImportExcelForPTIC\bin\Debug\ToImportExcelForPTIC.exe
+C:\Users\jinny\Desktop\Excel Import (Employee from sample)\ToImportExcelForPTIC\bin\Debug\ToImportExcelForPTIC.pdb
+C:\Users\jinny\Desktop\Excel Import (Employee from sample)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.exe
+C:\Users\jinny\Desktop\Excel Import (Employee from sample)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.pdb
+C:\Users\jinny\Desktop\Excel Import (Employee from sample)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.csprojResolveAssemblyReference.cache
+C:\Users\ASUS\Desktop\Excel Import (From Jin)\ToImportExcelForPTIC\bin\Debug\ToImportExcelForPTIC.exe.config
+C:\Users\ASUS\Desktop\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.csproj.ResolveComReference.cache
+C:\Users\ASUS\Desktop\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.exe
+C:\Users\ASUS\Desktop\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.pdb
+C:\Users\ASUS\Desktop\Excel Import (From Jin)\ToImportExcelForPTIC\bin\Debug\ToImportExcelForPTIC.exe
+C:\Users\ASUS\Desktop\Excel Import (From Jin)\ToImportExcelForPTIC\bin\Debug\ToImportExcelForPTIC.pdb
+C:\Users\ASUS\Desktop\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.csprojResolveAssemblyReference.cache
+C:\Users\ASUS\Desktop\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Form1.resources
+C:\Users\ASUS\Desktop\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Form2.resources
+C:\Users\ASUS\Desktop\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Form3.resources
+C:\Users\ASUS\Desktop\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Properties.Resources.resources
+C:\Users\ASUS\Desktop\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.csproj.GenerateResource.Cache
+C:\Users\zaw naing\Desktop\Ahat Project\Excel Import (From Jin)\ToImportExcelForPTIC\bin\Debug\ToImportExcelForPTIC.exe.config
+C:\Users\zaw naing\Desktop\Ahat Project\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.csproj.ResolveComReference.cache
+C:\Users\zaw naing\Desktop\Ahat Project\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.exe
+C:\Users\zaw naing\Desktop\Ahat Project\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.pdb
+C:\Users\zaw naing\Desktop\Ahat Project\Excel Import (From Jin)\ToImportExcelForPTIC\bin\Debug\ToImportExcelForPTIC.exe
+C:\Users\zaw naing\Desktop\Ahat Project\Excel Import (From Jin)\ToImportExcelForPTIC\bin\Debug\ToImportExcelForPTIC.pdb
+C:\Users\zaw naing\Desktop\Ahat Project\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.csprojResolveAssemblyReference.cache
+C:\Users\zaw naing\Desktop\Ahat Project\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Form1.resources
+C:\Users\zaw naing\Desktop\Ahat Project\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Form2.resources
+C:\Users\zaw naing\Desktop\Ahat Project\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Form3.resources
+C:\Users\zaw naing\Desktop\Ahat Project\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Properties.Resources.resources
+C:\Users\zaw naing\Desktop\Ahat Project\Excel Import (From Jin)\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.csproj.GenerateResource.Cache
