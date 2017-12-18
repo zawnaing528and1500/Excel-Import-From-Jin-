@@ -9,6 +9,12 @@ namespace Toyo.Core
     public class EmployeeRelativeDAO
     {
         Base b = new Base();
+
+        public void InsertWithNoObject(string queryString)
+        {
+            b.InsertWtithNoObject(queryString);
+        }
+
         public int Insert(EmployeeRelativeVO vo)
         {
             int lastInsertId = 0;

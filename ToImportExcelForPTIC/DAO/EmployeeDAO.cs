@@ -18,7 +18,7 @@ namespace Toyo.Core
                 lastInsertId = b.InsertWithImage("Employee", b.ConvertColName(vo), b.ConvertValueList(vo), vo.EmpPhoto);
                 if (lastInsertId > 0)
                 {
-                    MessageBox.Show("Success");
+                    //MessageBox.Show("Success");
                 }
                 //b.Insert("Employee", b.ConvertColName(vo), b.ConvertValueListNullable(vo));
             }

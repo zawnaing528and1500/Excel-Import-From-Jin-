@@ -142,6 +142,26 @@ namespace Toyo.Core
         #endregion
 
         #region CRUD
+
+        public void InsertWtithNoObject(string queryString)
+        {
+            //OpenConnection();
+            //System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
+            //cmd.CommandType = System.Data.CommandType.Text;
+            //cmd.CommandText = queryString;
+            ////"INSERT Region (RegionID, RegionDescription) VALUES (5, 'NorthWestern')"
+            //cmd.ExecuteScalar();
+            //CloseConnection();
+            SqlTransaction transaction = null;
+            OpenConnection();
+            transaction = _Con.BeginTransaction();
+            _Cmd = new SqlCommand();
+            _Cmd.Connection = _Con;
+            _Cmd.Transaction = transaction;
+            _Cmd.CommandText = queryString;
+            _Cmd.ExecuteScalar();
+            transaction.Commit();
+        }
         public int Insert(string tblName, string[] ColNames, object[] valuesList)
         {
             SqlTransaction transaction = null;

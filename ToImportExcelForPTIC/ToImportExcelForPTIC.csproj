@@ -305,6 +305,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ForPTICMDY_ExcelImportDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ImportForTownshipAndTown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportForTownshipAndTown.Designer.cs">
+      <DependentUpon>ImportForTownshipAndTown.cs</DependentUpon>
+    </Compile>
     <Compile Include="masterDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -446,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportForTownshipAndTown.resx">
+      <DependentUpon>ImportForTownshipAndTown.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -15,7 +15,7 @@ namespace ToImportExcelForPTIC
 {
     public partial class Form2 : Form
     {
-        int EMPLOYEEID = 1;
+        int EMPLOYEEID = 0;
         public Form2()
         {
             InitializeComponent();
@@ -131,220 +131,239 @@ namespace ToImportExcelForPTIC
                     if (Info.Count() != 0)
                     {
                         #region Sheet1
-
-                        #region For Inserting into Employee Table
-                        EmployeeVO employee = new EmployeeVO();
-                        
-
                         try
                         {
-                            //Get Employed Date
-                            if (Info[0] != null)
-                                employee.EmployDate = DateTime.Parse(Info[0].ToString());
-                            //Get Employee Name
-                            if (Info[1] != null)
-                                employee.EmpName = Info[1].ToString();
-                            //Get Position Name and use it to retrieve Position ID
-                            if (Info[2] != null)
-                            {
-                                string postName = Info[2].ToString();
-                                JobPositionVO vo = new JobPositionDAO().GetIDByName(postName);
-                                if (vo.Id == 0)
-                                {
-                                    vo.Id = 1;
-                                }
-                                employee.PostID = vo.Id;
+                            #region For Inserting into Employee Table
+                            EmployeeVO employee = new EmployeeVO();
 
-                                //employee.PostID = 1;
-                            }
-                            //Get Department name and use it to retrieve Deptment ID
-                            if (Info[3] != null)
+
+                            try
                             {
-                                string deptName = Info[5].ToString();
-                                DepartmentVO vo = new DepartmentDAO().GetIDByName(deptName);
-                                if (vo.Id == 0)
+                                //Get Employed Date
+                                if (Info[0] != null)
+                                    employee.EmployDate = DateTime.Parse(Info[0].ToString());
+                                //Get Employee Name
+                                if (Info[1] != null)
+                                    employee.EmpName = Info[1].ToString();
+                                //Get Position Name and use it to retrieve Position ID
+                                if (Info[2] != null)
                                 {
-                                    //MessageBox.Show("Invalid Department Name!");
-                                    //return;
-                                    vo.Id = 1;
+                                    string postName = Info[2].ToString();
+                                    JobPositionVO vo = new JobPositionDAO().GetIDByName(postName);
+                                    if (vo.Id == 0)
+                                    {
+                                        vo.Id = 1;
+                                    }
+                                    employee.PostID = vo.Id;
+
+                                    //employee.PostID = 1;
                                 }
-                                employee.DeptID = vo.Id;
-                                //employee.DeptID = 2;
-                            }
-                            //Get fingerID
-                            if (Info[4] != null)
-                            {
-                                string fingerID = Info[4].ToString();
-                                employee.FingerID = Convert.ToInt32(fingerID);
-                            }
-                            //Get Date of Birth
-                            if (Info[5] != null)
-                            {
-                                string dateOfBirth = Info[5].ToString();
-                                DateTime DateOfBirth = DateTime.Parse(dateOfBirth);
-                                employee.DOB = DateOfBirth;
-                            }
-                            //Get Employee NRC
-                            if (Info[6] != null)
-                                employee.NRCNo = Info[6].ToString();
-                            //Get Employed Date
-                            if (Info[7] != null)
-                            {
-                                string employedDate = Info[7].ToString();
-                                DateTime EmployedDate = DateTime.Parse(employedDate);
-                                employee.EmployDate = EmployedDate;
-                            }
-                            //Get Approval Date
-                            if (Info[8] != null)
-                            {
-                                employee.ApprovalDate = DateTime.Parse(Info[8].ToString());
-                                employee.IsPermanent = true;
-                            }
-                            else
-                            {
-                                employee.IsPermanent = false;
-                            }
-                            //Get Father Name
-                            if (Info[9] != null)
-                                employee.FatherName = Info[9].ToString();
-                            //Get Race
-                            if (Info[10] != null)
-                                employee.Race = Info[10].ToString();
-                            //Get Religion
-                            if (Info[11] != null)
-                            {
-                                if (Info[10].ToString() == "ဗုဒ္ဓဘာသာ")
+                                //Get Department name and use it to retrieve Deptment ID
+                                if (Info[3] != null)
                                 {
-                                    employee.Religion = 1;
+                                    string deptName = Info[5].ToString();
+                                    DepartmentVO vo = new DepartmentDAO().GetIDByName(deptName);
+                                    if (vo.Id == 0)
+                                    {
+                                        //MessageBox.Show("Invalid Department Name!");
+                                        //return;
+                                        vo.Id = 1;
+                                    }
+                                    employee.DeptID = vo.Id;
+                                    //employee.DeptID = 2;
                                 }
-                                else if (Info[10].ToString() == "မူဆလင်")
+                                //Get fingerID
+                                if (Info[4] != null)
                                 {
-                                    employee.Religion = 2;
+                                    string fingerID = Info[4].ToString();
+                                    employee.FingerID = Convert.ToInt32(fingerID);
                                 }
-                                else if (Info[10].ToString() == "ခရစ်ယာန်")
+                                //Get Date of Birth
+                                if (Info[5] != null)
                                 {
-                                    employee.Religion = 3;
+                                    string dateOfBirth = Info[5].ToString();
+                                    DateTime DateOfBirth = DateTime.Parse(dateOfBirth);
+                                    employee.DOB = DateOfBirth;
+                                }
+                                //Get Employee NRC
+                                if (Info[6] != null)
+                                    employee.NRCNo = Info[6].ToString();
+                                //Get Employed Date
+                                if (Info[7] != null)
+                                {
+                                    string employedDate = Info[7].ToString();
+                                    DateTime EmployedDate = DateTime.Parse(employedDate);
+                                    employee.EmployDate = EmployedDate;
+                                }
+                                //Get Approval Date
+                                if (Info[8] != null)
+                                {
+                                    employee.ApprovalDate = DateTime.Parse(Info[8].ToString());
+                                    employee.IsPermanent = true;
                                 }
                                 else
                                 {
-                                    employee.Religion = 4;
+                                    employee.IsPermanent = false;
                                 }
-                            }
-                            //Get Gender
-                            if (Info[12] != null)
-                            {
-                                if (Info[12].ToString() == "1")
-                                    employee.Gender = true;
-                                else if (Info[12].ToString() == "0")
-                                    employee.Gender = false;
+                                //Get Father Name
+                                if (Info[9] != null)
+                                    employee.FatherName = Info[9].ToString();
+                                //Get Race
+                                if (Info[10] != null)
+                                    employee.Race = Info[10].ToString();
+                                //Get Religion
+                                if (Info[11] != null)
+                                {
+                                    if (Info[10].ToString() == "ဗုဒ္ဓဘာသာ")
+                                    {
+                                        employee.Religion = 1;
+                                    }
+                                    else if (Info[10].ToString() == "မူဆလင်")
+                                    {
+                                        employee.Religion = 2;
+                                    }
+                                    else if (Info[10].ToString() == "ခရစ်ယာန်")
+                                    {
+                                        employee.Religion = 3;
+                                    }
+                                    else
+                                    {
+                                        employee.Religion = 4;
+                                    }
+                                }
+                                //Get Gender
+                                if (Info[12] != null)
+                                {
+                                    if (Info[12].ToString() == "1")
+                                        employee.Gender = true;
+                                    else if (Info[12].ToString() == "0")
+                                        employee.Gender = false;
+                                }
+
+                                //get Mariental Status
+                                if (Info[13] != null)
+                                {
+                                    if (Info[13].ToString() == "1")
+                                        employee.MaritalStatus = true;
+                                    else if (Info[13].ToString() == "0")
+                                        employee.MaritalStatus = false;
+                                }
+                                //get Passport Number
+                                if (Info[14] != null)
+                                {
+                                    employee.PassportNo = Info[14].ToString();
+                                }
+                                //Get Social Security Number
+                                if (Info[15] != null)
+                                {
+                                    employee.SSCode = Info[15].ToString();
+                                }
+                                //Get Driver License
+                                if (Info[16] != null)
+                                    employee.DriverLicence = Info[16].ToString();
+                                //Get in Case of Death Name of beneficiary
+                                if (Info[17] != null)
+                                    employee.IncaseOfDeathNameOfBeneficiary = Info[17].ToString();
+                                // Get Criminal
+                                if (Info[18] != null)
+                                {
+                                    if (Info[13].ToString() == "1")
+                                        employee.Criminal = true;
+                                    else if (Info[13].ToString() == "0")
+                                        employee.Criminal = false;
+                                }
+
+
+                                employee.ApplicantID = 1;
+                                employee.PostID = 1;
+                                employee.EmpPhoto = null;
+                                employee.SalaryLvlID = 1;
+                                //employee.Criminalrecord = null;
+                                //employee.ReferencesName1 = null;
+                                //employee.ReferencesName2 = null;
+                                //employee.ReferencesPh1 = null;
+                                //employee.ReferencesPh2 = null;
+
+                                if (EduWEx[31] != null)
+                                {
+                                    employee.ReferencesName1 = EduWEx[31];
+                                }
+                                if (EduWEx[33] != null)
+                                {
+                                    employee.ReferencesPh1 = EduWEx[33];
+                                }
+                                
+                                employee.IsActive = true;
+                                employee.IsDeleted = false;
+                                employee.CreatedDate = DateTime.Today;
+                                employee.LastModified = DateTime.Today;
+                                employee.IsBLO = null;
+                                employee.EmpPhoto = new byte[0];
+                                //Insert into employee table
+                                EmployeeDAO employeeDAO = new EmployeeDAO();
+
+                                //This is need to uncomment
+                                int lastInsertId = employeeDAO.Insert(employee);
+                                EMPLOYEEID = lastInsertId;
                             }
 
-                            //get Mariental Status
-                            if (Info[13] != null)
+                            catch (Exception ex)
                             {
-                                if (Info[13].ToString() == "1")
-                                    employee.MaritalStatus = true;
-                                else if (Info[13].ToString() == "0")
-                                    employee.MaritalStatus = false;
+                                MessageBox.Show("Error Occurred in inserting to Employee Table!");
+                                return;
                             }
-                            //get Passport Number
-                            if (Info[14] != null)
-                            {
-                                employee.PassportNo = Info[14].ToString();
-                            }
-                            //Get Social Security Number
-                            if (Info[15] != null)
-                            {
-                                employee.SSCode = Info[15].ToString();
-                            }
-                            //Get Driver License
-                            if (Info[16] != null)
-                                employee.DriverLicence = Info[16].ToString();
-                            //Get in Case of Death Name of beneficiary
-                            if (Info[17] != null)
-                                employee.IncaseOfDeathNameOfBeneficiary = Info[17].ToString();
-                            // Get Criminal
-                            if (Info[18] != null)
-                            {
-                                if (Info[13].ToString() == "1")
-                                    employee.Criminal = true;
-                                else if (Info[13].ToString() == "0")
-                                    employee.Criminal = false;
-                            }
-                            
-
-                            employee.ApplicantID= 1;
-                            employee.PostID = 1;
-                            employee.EmpPhoto = null;
-                            employee.SalaryLvlID = 1;
-                            //employee.Criminalrecord = null;
-                            //employee.ReferencesName1 = null;
-                            //employee.ReferencesName2 = null;
-                            //employee.ReferencesPh1 = null;
-                            //employee.ReferencesPh2 = null;
-                            employee.IsActive = true;
-                            employee.IsDeleted = false;
-                            employee.CreatedDate = DateTime.Today;
-                            employee.LastModified = DateTime.Today;
-                            employee.IsBLO = null;
-                            employee.EmpPhoto = new byte[0];                         
-                            //Insert into employee table
-                            EmployeeDAO employeeDAO = new EmployeeDAO();
-
-                            //This is need to uncomment
-                            int lastInsertId = employeeDAO.Insert(employee);
-                            EMPLOYEEID = lastInsertId;
+                            #endregion
                         }
-
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Error Occurred in inserting to Employee Table!");
-                            return;
+                            MessageBox.Show("Empoyee Insert Error:" + ex.ToString());
                         }
-                        #endregion
 
-                        #region for inserting to employee address table
                         try
                         {
-                            AddressVO address = new AddressVO();
-                            //Get Home  Number
-                            if (Info[19] != null)
+                            #region for inserting to employee address table Both Current Address and Permanent Address
+                            try
                             {
-                                address.HomeNo = Info[19];
-                            }
-                            //Get Street Number
-                            if (Info[20] != null)
-                            {
-                                address.Street = Info[20];
-                            }
-                            if (Info[21] != null)
-                            {
-                                address.Quarter = Info[21];
-                            }
-                            //Get TownshipID by Name
-                            if (Info[22] != null)
-                            {
-                                string townshipName = Info[22].ToString();
-                                AddressVO vo = new AddressDAO().GetIDByName(townshipName);
-                                if (vo.TownshipID == 0)
+                                AddressVO address = new AddressVO();
+                                //Get Home  Number
+                                if (Info[19] != null)
                                 {
-                                    vo.TownshipID = 1;
+                                    address.HomeNo = Info[19];
                                 }
-                                address.TownshipID = vo.TownshipID;
-                            }
-                            if (Info[32] != null)
-                            {
-                                address.Phone = Info[32].ToString();
-                            }
-                            //Get State Division ID by Name
-                            if (Info[24] != null)
-                            {
-                                string stateDivisionName = Info[24].ToString();
-                                System.Data.DataTable dt = new StateDivisionDAO().SelectByDivisionName(stateDivisionName);
-                               foreach (DataRow row in dt.Rows)
+                                //Get Street Number
+                                if (Info[20] != null)
+                                {
+                                    address.Street = Info[20];
+                                }
+                                if (Info[21] != null)
+                                {
+                                    address.Quarter = Info[21];
+                                }
+                                //Get TownshipID by Name
+                                if (Info[22] != null)
+                                {
+                                    string townshipName = Info[22].ToString();
+                                    AddressVO vo = new AddressDAO().GetIDByName(townshipName);
+                                    if (vo.TownshipID == 0)
+                                    {
+                                        vo.TownshipID = 1;
+                                    }
+                                    address.TownshipID = vo.TownshipID;
+                                }
+                                if (Info[32] != null)
+                                {
+                                    address.Phone = Info[32].ToString();
+                                }
+                                //Get State Division ID by Name
+                                if (Info[24] != null)
+                                {
+                                    string stateDivisionName = Info[24].ToString();
+                                    System.Data.DataTable dt = new StateDivisionDAO().SelectByDivisionName(stateDivisionName);
+                                    foreach (DataRow row in dt.Rows)
                                     {
                                         object value = row["ID"];
-                                        if (value == DBNull.Value){
+                                        if (value == DBNull.Value)
+                                        {
                                             MessageBox.Show("Can't Find Filled State Division!");
                                         }
                                         else
@@ -353,46 +372,121 @@ namespace ToImportExcelForPTIC
                                             string ID = Id.ToString();
                                             int stateDivisionID = Convert.ToInt32(ID);
                                             address.StateDivisionID = stateDivisionID;
-                                            MessageBox.Show(ID);
+                                            //MessageBox.Show(ID);
                                         }
                                     }
-                            }
-
-                            address.ApplicantID = 1;
-                            //Get EmpID from FingerID
-                            string figerID = Info[4].ToString();
-                            int FigerID = Convert.ToInt32(figerID);
-                            System.Data.DataTable EmpIDDT = new EmployeeDAO().GetEmpIDFromFingerID(FigerID);
-                            foreach (DataRow row in EmpIDDT.Rows)
-                            {
-                                object value = row["ID"];
-                                if (value == DBNull.Value)
-                                {
-                                    MessageBox.Show("Can't Find EmpID from FingerID!");
                                 }
-                                else
+
+                                address.ApplicantID = 1;
+                                address.IsPermanent = false;
+                                //Get EmpID from FingerID
+                                string figerID = Info[4].ToString();
+                                int FigerID = Convert.ToInt32(figerID);
+                                System.Data.DataTable EmpIDDT = new EmployeeDAO().GetEmpIDFromFingerID(FigerID);
+                                foreach (DataRow row in EmpIDDT.Rows)
                                 {
-                                    int EmpID = Convert.ToInt32(row["ID"].ToString());
-                                    address.EmpID = EmpID;
+                                    object value = row["ID"];
+                                    if (value == DBNull.Value)
+                                    {
+                                        MessageBox.Show("Can't Find EmpID from FingerID!");
+                                    }
+                                    else
+                                    {
+                                        int EmpID = Convert.ToInt32(row["ID"].ToString());
+                                        address.EmpID = EmpID;
+                                    }
                                 }
-                            }
 
-                            AddressDAO addressDAO = new AddressDAO();
-                            int lastInsertedId = addressDAO.Insert(address);
-                            if (lastInsertedId > 0)
+                                AddressDAO addressDAO = new AddressDAO();
+                                int lastInsertedId = addressDAO.Insert(address);
+                                if (lastInsertedId > 0)
+                                {
+                                    // MessageBox.Show("Inserting to Address table for not permanent is success");
+                                }
+
+                            }
+                            catch (Exception ex)
                             {
-                                MessageBox.Show("Inserting to Address table is success");
+                                MessageBox.Show("Error Occurred in Employee Info!");
+                                return;
                             }
 
+                            try
+                            {
+                                AddressVO vo = new AddressVO();
+                                vo.EmpID = EMPLOYEEID;
+                                vo.ApplicantID = 1;
+                                vo.IsPermanent = true;
+                                if (Info[26] != null)
+                                {
+                                    vo.HomeNo = Info[26];
+                                }
+                                if (Info[27] != null)
+                                {
+                                    vo.Street = Info[27];
+                                }
+                                if (Info[28] != null)
+                                {
+                                    vo.Quarter = Info[28];
+                                }
+
+                                if (Info[29] != null)
+                                {
+                                    string townshipName = Info[29];
+                                    AddressVO vo1 = new AddressDAO().GetIDByName(townshipName);
+                                    if (vo1.TownshipID == 0)
+                                    {
+                                        vo1.TownshipID = 1;
+                                    }
+                                    vo.TownshipID = vo1.TownshipID;
+                                }
+                                if (Info[32] != null)
+                                {
+                                    vo.Phone = Info[32];
+                                }
+                                if (Info[31] != null)
+                                {
+                                    string stateDivisionName = Info[31];
+                                    System.Data.DataTable dt = new StateDivisionDAO().SelectByDivisionName(stateDivisionName);
+                                    foreach (DataRow row in dt.Rows)
+                                    {
+                                        object value = row["ID"];
+                                        if (value == DBNull.Value)
+                                        {
+                                            MessageBox.Show("Can't Find Filled State Division!");
+                                        }
+                                        else
+                                        {
+                                            var Id = dt.Rows[0][0];
+                                            string ID = Id.ToString();
+                                            int stateDivisionID = Convert.ToInt32(ID);
+                                            vo.StateDivisionID = stateDivisionID;
+                                            //MessageBox.Show(ID);
+                                        }
+                                    }
+                                }
+
+                                AddressDAO addressDAO = new AddressDAO();
+                                int lastInsertedId = addressDAO.Insert(vo);
+                                if (lastInsertedId > 0)
+                                {
+                                    // MessageBox.Show("Inserting to Address table for permanent is success");
+                                }
+
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Error Occurred in Employee Info!");
+                                return;
+                            }
+
+                            #endregion
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Error Occurred in Employee Info!");
-                            return;
+                            MessageBox.Show("Address Insert Error:" + ex.ToString());
                         }
-
-                        #endregion
-
+                        
                         #endregion
                         
                     }
@@ -408,31 +502,31 @@ namespace ToImportExcelForPTIC
                             //Get string value from Excel
                             //EmpID should be declared as global variable
                             quvo.EmpID = EMPLOYEEID;
-                            if (EduWEx[5] != null && EduWEx[6] != null && EduWEx[7] != null)
+                            if (EduWEx[4] != null && EduWEx[5] != null && EduWEx[6] != null)
                             {
-                                quvo.Degree = EduWEx[5]; quvo.University = EduWEx[6]; quvo.QYear = EduWEx[7];
+                                quvo.Degree = EduWEx[4]; quvo.University = EduWEx[5]; quvo.QYear = EduWEx[6];
                                 EmployeeQualificationDAO dao = new EmployeeQualificationDAO();
                                 dao.Insert(quvo);
                             }
-                            if (EduWEx[8] != null && EduWEx[9] != null && EduWEx[10] != null)
+                            if (EduWEx[7] != null && EduWEx[8] != null && EduWEx[9] != null)
                             {
-                                quvo.Degree = EduWEx[8]; quvo.University = EduWEx[9]; quvo.QYear = EduWEx[10];
+                                quvo.Degree = EduWEx[7]; quvo.University = EduWEx[8]; quvo.QYear = EduWEx[9];
                                 EmployeeQualificationDAO dao = new EmployeeQualificationDAO();
                                 dao.Insert(quvo);
                             }
-                            if (EduWEx[11] != null && EduWEx[12] != null && EduWEx[13] != null)
+                            if (EduWEx[10] != null && EduWEx[11] != null && EduWEx[12] != null)
                             {
-                                quvo.Degree = EduWEx[11]; quvo.University = EduWEx[12]; quvo.QYear = EduWEx[13];
+                                quvo.Degree = EduWEx[10]; quvo.University = EduWEx[11]; quvo.QYear = EduWEx[12];
                                 EmployeeQualificationDAO dao = new EmployeeQualificationDAO();
                                 dao.Insert(quvo);
                             }
-                            if (EduWEx[14] != null && EduWEx[15] != null && EduWEx[16] != null)
+                            if (EduWEx[13] != null && EduWEx[14] != null && EduWEx[15] != null)
                             {
-                                quvo.Degree = EduWEx[14]; quvo.University = EduWEx[15]; quvo.QYear = EduWEx[16];
+                                quvo.Degree = EduWEx[13]; quvo.University = EduWEx[14]; quvo.QYear = EduWEx[15];
                                 EmployeeQualificationDAO dao = new EmployeeQualificationDAO();
                                 dao.Insert(quvo);
                             }
-
+                            //MessageBox.Show("Inserting to Qualification Table is OK");
                         }
                         catch (Exception ex)
                         {
@@ -441,113 +535,174 @@ namespace ToImportExcelForPTIC
                         }
                         #endregion
 
-                        #region working experience
+                        #region for Inserting Working Experience
                         EmployeeWorkingExperienceVO vo = new EmployeeWorkingExperienceVO();
-                        //17/18/19/20/21
-                        if (EduWEx[17] != null && EduWEx[18] != null && EduWEx[19] != null && EduWEx[20] != null && EduWEx[21] != null)
+                        vo.EmpID = EMPLOYEEID;
+                        //17/18/19/20/21 - Array Index for Column
+                        if (EduWEx[16] != null && EduWEx[17] != null && EduWEx[18] != null && EduWEx[19] != null && EduWEx[20] != null)
                         {
-                            vo.Period = EduWEx[17]; vo.Company = EduWEx[18]; vo.Position = EduWEx[19]; vo.Address = EduWEx[20]; vo.Phone = EduWEx[21]; vo.RefName = EduWEx[32];
+                            vo.Period = EduWEx[16]; vo.Company = EduWEx[17]; vo.Position = EduWEx[18]; vo.Address = EduWEx[19]; vo.Phone = EduWEx[20]; vo.RefName = EduWEx[31];
                             EmployeeWorkingExperienceDAO doa = new EmployeeWorkingExperienceDAO();
                             doa.Insert(vo);
                         }
-                        if (EduWEx[22] != null && EduWEx[23] != null && EduWEx[24] != null && EduWEx[25] != null && EduWEx[26] != null)
+                        if (EduWEx[21] != null && EduWEx[22] != null && EduWEx[23] != null && EduWEx[24] != null && EduWEx[25] != null)
                         {
-                            vo.Period = EduWEx[22]; vo.Company = EduWEx[23]; vo.Position = EduWEx[24]; vo.Address = EduWEx[25]; vo.Phone = EduWEx[26]; vo.RefName = EduWEx[32];
+                            vo.Period = EduWEx[21]; vo.Company = EduWEx[22]; vo.Position = EduWEx[23]; vo.Address = EduWEx[24]; vo.Phone = EduWEx[25]; vo.RefName = EduWEx[31];
                             EmployeeWorkingExperienceDAO doa = new EmployeeWorkingExperienceDAO();
                             doa.Insert(vo);
                         }
-                        if (EduWEx[27] != null && EduWEx[28] != null && EduWEx[29] != null && EduWEx[30] != null && EduWEx[31] != null)
+                        if (EduWEx[26] != null && EduWEx[27] != null && EduWEx[28] != null && EduWEx[29] != null && EduWEx[30] != null)
                         {
-                            vo.Period = EduWEx[27]; vo.Company = EduWEx[28]; vo.Position = EduWEx[29]; vo.Address = EduWEx[30]; vo.Phone = EduWEx[31]; vo.RefName = EduWEx[32];
+                            vo.Period = EduWEx[26]; vo.Company = EduWEx[27]; vo.Position = EduWEx[28]; vo.Address = EduWEx[29]; vo.Phone = EduWEx[30]; vo.RefName = EduWEx[31];
                             EmployeeWorkingExperienceDAO doa = new EmployeeWorkingExperienceDAO();
                             doa.Insert(vo);
-                        }                      
+                        }
+                        //MessageBox.Show("Inserting to Working Experience is OK");
                         #endregion
 
                         #endregion
 
                     }
-                    if(WorkHisBank.Count() != 0)
+                    if (WorkHisBank.Count() != 0)
                     {
                         #region sheet3
+
+                        #region for Inserting Bank Information
                         //Insert employee bank info
                         //EmpID,BankID,AccountNumber,AccountType
                         EmployeeBankInfoVO vo = new EmployeeBankInfoVO();
                         //Cell Start From 15,16,17->18,19,20
                         vo.EmpID = EMPLOYEEID;
-                        if(WorkHisBank[15] != null && WorkHisBank[16]!= null && WorkHisBank[17] != null)
+                        if (WorkHisBank[14] != null && WorkHisBank[15] != null && WorkHisBank[16] != null)
                         {
-                            string bankName = WorkHisBank[15];
+                            string bankName = WorkHisBank[14];
                             BankVO bvo = new BankDAO().GetByBank(bankName);
                             vo.BankID = bvo.Id;//Get BankID from Bank table
-                            vo.AccountNumber = WorkHisBank[16];
-                            vo.AccountType = WorkHisBank[17];
+                            vo.AccountNumber = WorkHisBank[15];
+                            vo.AccountType = WorkHisBank[16];
 
                             EmployeeBankInfoDAO empdao = new EmployeeBankInfoDAO();
                             empdao.Insert(vo);
                         }
+                        if (WorkHisBank[17] != null && WorkHisBank[18] != null && WorkHisBank[19] != null)
+                        {
+                            string bankName = WorkHisBank[17];
+                            BankVO bvo = new BankDAO().GetByBank(bankName);
+                            vo.BankID = bvo.Id;//Get BankID from Bank table
+                            vo.AccountNumber = WorkHisBank[18];
+                            vo.AccountType = WorkHisBank[19];
+
+                            EmployeeBankInfoDAO empdao = new EmployeeBankInfoDAO();
+                            empdao.Insert(vo);
+                           // MessageBox.Show("Inserting in to Employee bank Info is OK");
+                        }
+                        #endregion
+                       
                         #endregion
                     }
-                    if(ParSib.Count() != 0)
+                    if (ParSib.Count() != 0)
                     {
                         #region sheet4
+                        #region for Inserting Both Relative Information and Children Information
                         EmployeeRelativeVO vo = new EmployeeRelativeVO();
-                            vo.EmpID = EMPLOYEEID;
-                        if(ParSib[5] != null)
+                        vo.EmpID = EMPLOYEEID;
+                        if (ParSib[4] != null)
                         {
-                            vo.RelativeName = ParSib[5];
+                            vo.RelativeName = ParSib[4];
                             vo.Relation = "Partner";
-                        }
-                        if (ParSib[8] != null)
-                        {
-                            vo.NameOfCompany = ParSib[8];
-                        }
-                        if (ParSib[6] != null)
-                        {
-                            vo.Occupation = ParSib[6];
-                        }
-                        if (ParSib[9] != null)
-                        {
-                            vo.Address = ParSib[9];
                         }
                         if (ParSib[7] != null)
                         {
-                            vo.Phone = ParSib[7];
+                            vo.NameOfCompany = ParSib[7];
+                        }
+                        if (ParSib[5] != null)
+                        {
+                            vo.Occupation = ParSib[5];
+                        }
+                        if (ParSib[8] != null)
+                        {
+                            vo.Address = ParSib[8];
+                        }
+                        if (ParSib[6] != null)
+                        {
+                            vo.Phone = ParSib[6];
                         }
                         EmployeeRelativeDAO redao = new EmployeeRelativeDAO();
                         redao.Insert(vo);
-                        if(ParSib[11] != null && ParSib[12] != null)
+                        if (ParSib[10] != null && ParSib[11] != null)
                         {
                             EmployeeRelativeVO childrenvo1 = new EmployeeRelativeVO();
-                            childrenvo1.RelativeName = ParSib[11];
+                            childrenvo1.EmpID = EMPLOYEEID;
+                            childrenvo1.RelativeName = ParSib[10];
                             childrenvo1.Relation = "Children";
                             redao.Insert(childrenvo1);
+                            string dateOfBirth = ParSib[11].ToString();
+                            DateTime DateOfBirth = DateTime.Parse(dateOfBirth);
+                            string DOB = DateOfBirth.ToString("yyyy-MM-dd");
+                            redao.InsertWithNoObject("INSERT INTO Employee_Children (EmpID, ChildrenName, DOB) VALUES (" + EMPLOYEEID + ", N'" + ParSib[10] + "'," + DOB + ")");
                         }
-                        if (ParSib[13] != null && ParSib[14] != null)
+                        if (ParSib[12] != null && ParSib[13] != null)
                         {
                             EmployeeRelativeVO childrenvo2 = new EmployeeRelativeVO();
-                            childrenvo2.RelativeName = ParSib[13];
+                            childrenvo2.EmpID = EMPLOYEEID;
+                            childrenvo2.RelativeName = ParSib[12];
                             childrenvo2.Relation = "Children";
                             redao.Insert(childrenvo2);
+                            string dateOfBirth = ParSib[13].ToString();
+                            DateTime DateOfBirth = DateTime.Parse(dateOfBirth);
+                            string DOB = DateOfBirth.ToString("yyyy-MM-dd");
+                            redao.InsertWithNoObject("INSERT INTO Employee_Children (EmpID, ChildrenName, DOB) VALUES (" + EMPLOYEEID + ", N'" + ParSib[12] + "'," + DOB + ")");
                         }
-                        if (ParSib[15] != null && ParSib[16] != null)
+                        if (ParSib[14] != null && ParSib[15] != null)
                         {
                             EmployeeRelativeVO childrenvo3 = new EmployeeRelativeVO();
-                            childrenvo3.RelativeName = ParSib[15];
+                            childrenvo3.EmpID = EMPLOYEEID;
+                            childrenvo3.RelativeName = ParSib[14];
                             childrenvo3.Relation = "Children";
                             redao.Insert(childrenvo3);
+                            string dateOfBirth = ParSib[15].ToString();
+                            DateTime DateOfBirth = DateTime.Parse(dateOfBirth);
+                            string DOB = DateOfBirth.ToString("yyyy-MM-dd");
+                            redao.InsertWithNoObject("INSERT INTO Employee_Children (EmpID, ChildrenName, DOB) VALUES (" + EMPLOYEEID + ", N'" + ParSib[14] + "'," + DOB + ")");
                         }
-                        if (ParSib[17] != null && ParSib[18] != null)
+                        if (ParSib[16] != null && ParSib[17] != null)
                         {
                             EmployeeRelativeVO childrenvo4 = new EmployeeRelativeVO();
-                            childrenvo4.RelativeName = ParSib[17];
+                            childrenvo4.EmpID = EMPLOYEEID;
+                            childrenvo4.RelativeName = ParSib[16];
                             childrenvo4.Relation = "Children";
                             redao.Insert(childrenvo4);
+                            string dateOfBirth = ParSib[17].ToString();
+                            DateTime DateOfBirth = DateTime.Parse(dateOfBirth);
+                            string DOB = DateOfBirth.ToString("yyyy-MM-dd");
+                            redao.InsertWithNoObject("INSERT INTO Employee_Children (EmpID, ChildrenName, DOB) VALUES (" + EMPLOYEEID + ", N'" + ParSib[16] + "'," + DOB + ")");
                         }
+                        //MessageBox.Show("Inserting into Employee Relative and Children is OK");
+                        #endregion
                         #endregion
                     }
                 }
             }
           }
+
+        private void lblSetup_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblHeaderPCat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFileName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

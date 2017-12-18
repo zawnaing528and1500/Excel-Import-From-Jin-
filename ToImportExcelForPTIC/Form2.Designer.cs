@@ -48,6 +48,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(579, 43);
             this.panel1.TabIndex = 18;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblSetup
             // 
@@ -60,6 +61,7 @@
             this.lblSetup.Size = new System.Drawing.Size(50, 20);
             this.lblSetup.TabIndex = 50;
             this.lblSetup.Text = "Setup";
+            this.lblSetup.Click += new System.EventHandler(this.lblSetup_Click);
             // 
             // lblHeaderPCat
             // 
@@ -71,6 +73,7 @@
             this.lblHeaderPCat.Size = new System.Drawing.Size(195, 20);
             this.lblHeaderPCat.TabIndex = 48;
             this.lblHeaderPCat.Text = "> Employee Excel Import";
+            this.lblHeaderPCat.Click += new System.EventHandler(this.lblHeaderPCat_Click);
             // 
             // txtFileName
             // 
@@ -79,6 +82,7 @@
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.Size = new System.Drawing.Size(265, 20);
             this.txtFileName.TabIndex = 17;
+            this.txtFileName.TextChanged += new System.EventHandler(this.txtFileName_TextChanged);
             // 
             // btnimport
             // 
