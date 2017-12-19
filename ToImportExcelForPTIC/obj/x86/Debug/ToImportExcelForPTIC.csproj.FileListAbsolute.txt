@@ -63,3 +63,16 @@ D:\GIT Repositories\Excel-Import-From-Jin-\ToImportExcelForPTIC\bin\Debug\ToImpo
 D:\GIT Repositories\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.csproj.ResolveComReference.cache
 D:\GIT Repositories\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.exe
 D:\GIT Repositories\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.pdb
+D:\GIT HUB\Excel-Import-From-Jin-\ToImportExcelForPTIC\bin\Debug\ToImportExcelForPTIC.exe.config
+D:\GIT HUB\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.csproj.ResolveComReference.cache
+D:\GIT HUB\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.exe
+D:\GIT HUB\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.pdb
+D:\GIT HUB\Excel-Import-From-Jin-\ToImportExcelForPTIC\bin\Debug\ToImportExcelForPTIC.exe
+D:\GIT HUB\Excel-Import-From-Jin-\ToImportExcelForPTIC\bin\Debug\ToImportExcelForPTIC.pdb
+D:\GIT HUB\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.csprojResolveAssemblyReference.cache
+D:\GIT HUB\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Form1.resources
+D:\GIT HUB\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Form2.resources
+D:\GIT HUB\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Form3.resources
+D:\GIT HUB\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.ImportForTownshipAndTown.resources
+D:\GIT HUB\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Properties.Resources.resources
+D:\GIT HUB\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.csproj.GenerateResource.Cache

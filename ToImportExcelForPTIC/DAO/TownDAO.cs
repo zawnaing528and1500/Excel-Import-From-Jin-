@@ -168,7 +168,7 @@ namespace Toyo.Core
         {
             TownVO vo = new TownVO();
 
-            DataTable dt = Select("Town='" + Name + "'");
+            DataTable dt = Select("Town=N'" + Name + "'");
             if (dt.Rows.Count > 0)
                 vo = b.ConvertObj(dt.Rows[0], new TownVO()) as TownVO;
             return vo;
