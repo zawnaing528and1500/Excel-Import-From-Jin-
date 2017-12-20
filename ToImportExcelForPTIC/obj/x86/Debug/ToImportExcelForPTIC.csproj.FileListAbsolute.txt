@@ -59,3 +59,7 @@ D:\GIT HUB\Exce-_Import_git\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\
 D:\GIT HUB\Exce-_Import_git\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.Properties.Resources.resources
 D:\GIT HUB\Exce-_Import_git\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.csproj.GenerateResource.Cache
 D:\GIT HUB\Exce-_Import_git\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.ImportForTownshipAndTown.resources
+D:\GIT Repositories\Excel-Import-From-Jin-\ToImportExcelForPTIC\bin\Debug\ToImportExcelForPTIC.exe.config
+D:\GIT Repositories\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.csproj.ResolveComReference.cache
+D:\GIT Repositories\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.exe
+D:\GIT Repositories\Excel-Import-From-Jin-\ToImportExcelForPTIC\obj\x86\Debug\ToImportExcelForPTIC.pdb

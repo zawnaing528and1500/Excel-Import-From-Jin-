@@ -162,5 +162,16 @@ namespace Toyo.Core
             }
             return dt;
         }
+
+
+        public TownVO GetIDByName(string Name)
+        {
+            TownVO vo = new TownVO();
+
+            DataTable dt = Select("Town='" + Name + "'");
+            if (dt.Rows.Count > 0)
+                vo = b.ConvertObj(dt.Rows[0], new TownVO()) as TownVO;
+            return vo;
+        }
     }
 }

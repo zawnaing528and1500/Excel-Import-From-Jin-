@@ -710,16 +710,64 @@ namespace ToImportExcelForPTIC
                         #endregion
                         if (Town[0] != null && Town[4] != null)
                         {
-                            string StateDividisionName = Town[0];
-                            string TownName = Town[4];
                             TownVO vo = new TownVO();
-                          }
+                            string stateDivisionName = Town[0].ToString();
+                            string townName = Town[4].ToString();
+                            System.Data.DataTable dt = new StateDivisionDAO().SelectByDivisionName(stateDivisionName);
+                            foreach (DataRow row in dt.Rows)
+                            {
+                                object value = row["ID"];
+                                if (value == DBNull.Value)
+                                {
+                                    MessageBox.Show("Can't Find State Division!");
+                                }
+                                else
+                                {
+                                    var Id = dt.Rows[0][0];
+                                    string ID = Id.ToString();
+                                    int stateDivisionID = Convert.ToInt32(ID);
+                                    vo.StateDivisionID = stateDivisionID;
+                                    vo.Town = townName;
+                                    //check town if it is duplicate
+                                    TownVO tvo = new TownDAO().GetIDByName(townName);
+                                    if (tvo.Id == 0)
+                                    {
+                                        TownDAO dao = new TownDAO();
+                                        dao.Insert(vo);
+                                    }
+                                }
+                            }
+                        }
                         #endregion
                     }
                     if (Township.Count() != 0)
                     {
                         #region sheet 7
                         #region for inserting Township information
+                        if(Township[2] != null & Township[5] != null)
+                        {
+                            TownshipInfoVO vo = new TownshipInfoVO();
+                            int TownId = 0;
+                            string townName = Township[2];
+                            string townshipName = Township[5];
+                            TownVO tvo = new TownDAO().GetIDByName(townName);
+                            if (vo.Id == 0)
+                            {
+                                vo.Id = 1;
+                            }
+                            else
+                            {
+                                TownId = vo.Id;
+                            }
+                            vo.TownID= TownId;
+                            vo.Township = townshipName;
+                            TownshipInfoVO tvo1 = new TownshipInfoDAO().GetIDByName(townName);
+                            if (vo.Id == 0)
+                            {
+                                TownshipInfoDAO dao = new TownshipInfoDAO();
+                                dao.Insert(vo);
+                            }
+                        }
                         #endregion
                         #endregion
                     }

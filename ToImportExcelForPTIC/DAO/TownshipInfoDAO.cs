@@ -181,6 +181,16 @@ namespace Toyo.Core
             }
             return dt;
         }
+
+        public TownshipInfoVO GetIDByName(string Name)
+        {
+            TownshipInfoVO vo = new TownshipInfoVO();
+
+            DataTable dt = Select("Township=N'" + Name + "'");
+            if (dt.Rows.Count > 0)
+                vo = b.ConvertObj(dt.Rows[0], new TownshipInfoVO()) as TownshipInfoVO;
+            return vo;
+        }
     }
 }
 
