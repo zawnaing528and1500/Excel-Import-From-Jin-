@@ -189,7 +189,7 @@ namespace Toyo.Core
         {
             JobPositionVO vo = new JobPositionVO();
 
-            DataTable dt = Select("PostName='" + postName + "'");
+            DataTable dt = Select("PostName=N'" + postName + "'");
             if (dt.Rows.Count > 0)
                 vo = b.ConvertObj(dt.Rows[0], new JobPositionVO()) as JobPositionVO;
             return vo;

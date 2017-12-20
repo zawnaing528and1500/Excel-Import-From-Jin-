@@ -115,7 +115,7 @@ namespace Toyo.Core
         {
             AddressVO vo = new AddressVO();
 
-            DataTable dt = SelectTownshipID("Township='" + townshipName + "'");
+            DataTable dt = SelectTownshipID("Township=N'" + townshipName + "'");
             if (dt.Rows.Count > 0)
                 vo = b.ConvertObj(dt.Rows[0], new AddressVO()) as AddressVO;
             return vo;

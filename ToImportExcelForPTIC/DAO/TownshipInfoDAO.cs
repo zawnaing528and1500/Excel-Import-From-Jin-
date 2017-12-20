@@ -191,6 +191,36 @@ namespace Toyo.Core
                 vo = b.ConvertObj(dt.Rows[0], new TownshipInfoVO()) as TownshipInfoVO;
             return vo;
         }
+
+        public int SelectIDByTownshipName(string value)
+        {
+            int ID = 0;
+            DataTable dt = new DataTable();
+            try
+            {
+                List<string> col = new List<string>();
+                List<object> val = new List<object>();
+
+                col.Add("Township");
+                val.Add(value);
+
+                dt = b.SelectByCondition("Township", col, val, "Township=@Township");
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["ID"] != System.DBNull.Value)
+                    {
+                        string Id = dt.Rows[0][0].ToString();
+                        ID = Convert.ToInt32(Id);
+                    }
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            return ID;
+        }
     }
 }
 

@@ -89,6 +89,7 @@ namespace ToImportExcelForPTIC
 
                     if (Town.Count() != 0)
                     {
+                        int TownID = 0;
                         #region sheet 6
 
                         try
@@ -120,8 +121,9 @@ namespace ToImportExcelForPTIC
                                         vo.IsDeleted = false;
 
                                         //check town if it is duplicate
-                                        TownVO tvo = new TownDAO().GetIDByName(townName);
-                                        if (tvo.Id == 0)
+                                        
+                                        TownID = new TownDAO().SelectIDByTownName(townName);
+                                        if (TownID == 0)
                                         {
                                             TownDAO dao = new TownDAO();
                                             dao.Insert(vo);
@@ -171,26 +173,19 @@ namespace ToImportExcelForPTIC
                             #region for inserting Township information
                             if (Township[2] != null & Township[5] != null)
                             {
+                                int TownshipID = 0;
                                 TownshipInfoVO vo = new TownshipInfoVO();
-                                int TownId = 0;
                                 string townName = Township[2];
                                 string townshipName = Township[5];
-                                TownVO tvo = new TownDAO().GetIDByName(townName);
-                                if (vo.Id == 0)
-                                {
-                                    vo.Id = 1;
-                                }
-                                else
-                                {
-                                    TownId = vo.Id;
-                                }
-                                vo.TownID = TownId;
+                                int TownID = new TownDAO().SelectIDByTownName(townName);
+                                vo.TownID = TownID;
                                 vo.Township = townshipName;
                                 vo.DateAdded = DateTime.Now;
                                 vo.LastModified = DateTime.Now;
                                 vo.IsDeleted = false;
-                                TownshipInfoVO tvo1 = new TownshipInfoDAO().GetIDByName(townName);
-                                if (vo.Id == 0)
+                                TownshipID = new TownshipInfoDAO().SelectIDByTownshipName(townshipName);
+                                
+                                if (TownshipID == 0)
                                 {
                                     TownshipInfoDAO dao = new TownshipInfoDAO();
                                     dao.Insert(vo);

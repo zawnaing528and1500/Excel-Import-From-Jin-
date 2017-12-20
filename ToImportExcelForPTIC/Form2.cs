@@ -149,28 +149,17 @@ namespace ToImportExcelForPTIC
                                 if (Info[2] != null)
                                 {
                                     string postName = Info[2].ToString();
-                                    JobPositionVO vo = new JobPositionDAO().GetIDByName(postName);
-                                    if (vo.Id == 0)
-                                    {
-                                        vo.Id = 1;
-                                    }
-                                    employee.PostID = vo.Id;
+                                    int PositionID = new EmployeeDAO().SelectIDByPositionName(postName);
+                                    employee.PostID = PositionID;
 
                                     //employee.PostID = 1;
                                 }
                                 //Get Department name and use it to retrieve Deptment ID
                                 if (Info[3] != null)
                                 {
-                                    string deptName = Info[5].ToString();
-                                    DepartmentVO vo = new DepartmentDAO().GetIDByName(deptName);
-                                    if (vo.Id == 0)
-                                    {
-                                        //MessageBox.Show("Invalid Department Name!");
-                                        //return;
-                                        vo.Id = 1;
-                                    }
-                                    employee.DeptID = vo.Id;
-                                    //employee.DeptID = 2;
+                                    string deptName = Info[3].ToString();
+                                    int DeptID = new EmployeeDAO().SelectIDByDeptName(deptName);
+                                    employee.DeptID = DeptID;
                                 }
                                 //Get fingerID
                                 if (Info[4] != null)
@@ -343,12 +332,8 @@ namespace ToImportExcelForPTIC
                                 if (Info[22] != null)
                                 {
                                     string townshipName = Info[22].ToString();
-                                    AddressVO vo = new AddressDAO().GetIDByName(townshipName);
-                                    if (vo.TownshipID == 0)
-                                    {
-                                        vo.TownshipID = 1;
-                                    }
-                                    address.TownshipID = vo.TownshipID;
+                                    int TownshipID = new TownshipInfoDAO().SelectIDByTownshipName(townshipName);
+                                    address.TownshipID = TownshipID;
                                 }
                                 if (Info[32] != null)
                                 {
@@ -372,7 +357,6 @@ namespace ToImportExcelForPTIC
                                             string ID = Id.ToString();
                                             int stateDivisionID = Convert.ToInt32(ID);
                                             address.StateDivisionID = stateDivisionID;
-                                            //MessageBox.Show(ID);
                                         }
                                     }
                                 }
@@ -433,12 +417,8 @@ namespace ToImportExcelForPTIC
                                 if (Info[29] != null)
                                 {
                                     string townshipName = Info[29];
-                                    AddressVO vo1 = new AddressDAO().GetIDByName(townshipName);
-                                    if (vo1.TownshipID == 0)
-                                    {
-                                        vo1.TownshipID = 1;
-                                    }
-                                    vo.TownshipID = vo1.TownshipID;
+                                    int TownshipID = new TownshipInfoDAO().SelectIDByTownshipName(townshipName);
+                                    vo.TownshipID = TownshipID;
                                 }
                                 if (Info[32] != null)
                                 {

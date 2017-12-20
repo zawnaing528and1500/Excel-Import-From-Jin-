@@ -189,9 +189,9 @@ namespace Toyo.Core
             set { isPermanent = value; }
         }
 
-        private DateTime approvalDate;
+        private DateTime? approvalDate;
 
-        public DateTime ApprovalDate
+        public DateTime? ApprovalDate
         {
             get { return approvalDate; }
             set { approvalDate = value; }

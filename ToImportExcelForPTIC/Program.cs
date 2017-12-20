@@ -22,8 +22,8 @@ namespace ToImportExcelForPTIC
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form2());
-           // Form2 frm = new Form2();
-        //    frm.ShowDialog();
+           //To Insert Employee Data Preparation , use Form2
+            //to Insert Town and Township Information, use ImportForTownshipAndTown
         }
     }
 }
